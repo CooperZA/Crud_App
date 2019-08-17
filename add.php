@@ -1,56 +1,59 @@
-<?php 
+<?php
 
-include('../include/config.php');
+include('include/config.php');
 
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 
-// Syntax 
-// "SELECT * FROM tableName WHERE user_input = primaryKey "
-$sql = "SELECT * FROM records WHERE email = '$email'";
 
-// check if connected
+//Syntax:
+//"SELECT * FROM tablename WHERE user_input = primary";
+
+$sql = "SELECT * FROM records WHERE email='$email'";
+
 $result = mysqli_query($con, $sql);
 
 $row = mysqli_fetch_array($result);
 
-// check if user already exists
-if($row['$email'] == $email){
-    // echo "Email already exists";
-    ?>
+//check if the user already exist
 
-    <!-- Javascript -->
+if($row['email']==$email){
+    // echo 'Email Already Exist';
+    ?>
+    <!-- JavaScript -->
     <script>
-        alert("Student already exists");
+        alert('Student Already Exist');
         window.location = 'index.php';
     </script>
-
     <?php
-}else{
-    $data = "INSERT INTO records(name, email, phone)VALUES('$name','$email','$phone')";
+}
+else{
+    $data = "INSERT INTO records(name,email,phone)VALUES('$name','$email','$phone')";
 
-    if(mysqli_query($con, $data)){
-        // echo "New User Added Successfully";
+    if(mysqli_query($con,$data)){
+        // echo 'New User Added Successfully';
         ?>
-        <!-- Javascript -->
-        <script>
-            alert('New Student Added Successfully');
-            window.location = 'index.php';
-        </script>
+            <!-- JavaScript -->
+            <script>
+                alert('New Student Added Successfully');
+                window.location = 'index.php';
+            </script>
+
         <?php
-    }else{
-        // echo "User Not Added";
+    }
+
+    else{
+        // echo 'User Not Added';
         ?>
-        <!-- Javascript -->
-        <script>
-            alert('Student Not Added');
-            window.location = 'index.php';
-        </script>
+            <!-- JavaScript -->
+            <script>
+                alert('Student Not Added');
+                window.location = 'index.php';
+            </script>
+
         <?php
     }
 }
-
-
 
 ?>

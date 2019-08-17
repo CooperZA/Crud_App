@@ -29,7 +29,11 @@
         $result = mysqli_query($con, $sql);
 
         $row = mysqli_fetch_array($result);
+
+
     ?>
+    
+    <?php include('include/header.php') ?>
 
     <div class="row d-flex justify-content-center">
     <div class="col-md-6">
@@ -41,23 +45,23 @@
                 <div class="modal-body mx-3">
                     <div class="md-form mb-5">
                         <i class="fa fa-user prefix grey-text"></i>
-                        <input type="text" id="studentid" name="studentid" class="form-control validate" required readonly value="<?php echo $row['studentid']?>">
+                        <input type="text" id="studentid" name="studentid" class="form-control validate" required readonly value="<?php echo $row['studentid'] ?>">
                         <label data-error="wrong" data-success="right" for="studentid"></label>
                     </div>
                     <div class="md-form mb-5">
                         <i class="fa fa-user prefix grey-text"></i>
-                        <input type="text" id="name" name="name" class="form-control validate" value="<?php echo $row['name']?>">
+                        <input type="text" id="name" name="name" class="form-control validate" value="<?php echo $row['name'] ?>">
                         <label data-error="wrong" data-success="right" for="name"></label>
                     </div>
                     <div class="md-form mb-5">
                         <i class="fa fa-envelope prefix grey-text"></i>
-                        <input type="email" id="email" name="email" class="form-control validate" value="<?php echo $row['email']?>">
+                        <input type="email" id="email" name="email" class="form-control validate" value="<?php echo $row['email'] ?>">
                         <label data-error="wrong" data-success="right" for="email"></label>
                     </div>
 
                     <div class="md-form mb-4">
                         <i class="fa fa-phone prefix grey-text"></i>
-                        <input type="text" id="phone" name="phone" class="form-control validate" value="<?php echo $row['phone']?>">
+                        <input type="text" id="phone" name="phone" class="form-control validate" value="<?php echo $row['phone'] ?>">
                         <label data-error="wrong" data-success="right" for="phone"></label>
                     </div>
 
@@ -72,6 +76,12 @@
         </div>
     </div>
 </div>
+
+
+    <?php include('include/footer.php') ?>
+
+
+
 
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>

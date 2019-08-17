@@ -1,10 +1,11 @@
-<?php 
+<?php
 
-/* server, user name, password, database name */
-$connect = mysqli_connect('localhost', 'zach', 'abc123', 'registration');
 
-if(!$connect){
-    echo "Database not connected";
+$con = mysqli_connect('localhost','justice', 'abc123', 'registration');
+
+if(!$con){
+    echo 'Database Not Connected';
 }
+
 
 ?>

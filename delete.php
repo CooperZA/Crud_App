@@ -1,17 +1,21 @@
 <?php
-    include('include/config.php');
 
-    $name = $_GET['name'];
+include('include/config.php');
 
-    $sql = "DELETE FROM records WHERE name = '$name'";
+$name = $_GET['name'];
 
-    $result = mysqli_query($con, $sql);
+$sql = "DELETE FROM records WHERE name='$name'";
 
-    if($result){
-        echo "<script>('Student Record Deleted');</script>";
-        echo "<script>window.location.href = 'index.php'</script>";
-    }else{
-        echo "<script>('Student Record Not Deleted');</script>";
-        echo "<script>window.location.href = 'index.php'</script>";
-    }
+$result = mysqli_query($con, $sql);
+
+if($result){
+    echo"<script>alert('Student Records Deleted');</script>";
+    echo"<script>window.location.href = 'index.php'</script>";
+}
+else{
+    echo"<script>alert('Student Records Not Deleted');</script>";
+    echo"<script>window.location.href = 'index.php'</script>";
+}
+
+
 ?>
