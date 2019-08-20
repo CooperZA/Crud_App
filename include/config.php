@@ -1,7 +1,7 @@
 <?php
 
-
-$con = mysqli_connect('localhost','justice', 'abc123', 'registration');
+// hostname, username, password, db
+$con = mysqli_connect('localhost','zach', 'Zac4Admin!', 'registration');
 
 if(!$con){
     echo 'Database Not Connected';
@@ -9,3 +9,4 @@ if(!$con){
 
 
 ?>
+

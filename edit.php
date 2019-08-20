@@ -2,10 +2,10 @@
 
 include 'include/config.php';
 
-$studentid =$_POST['studentid'];
-$name =$_POST['name'];
-$email =$_POST['email'];
-$phone =$_POST['phone'];
+$studentid = $_POST['studentid'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
 
 $sql = "UPDATE records SET name='$name', email='$email', phone='$phone' WHERE studentid='$studentid'";
 
